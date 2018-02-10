@@ -37,8 +37,8 @@ class Monthly_Consolidate_Refunds extends Consolidate {
     $date = new \DateTime( date ( 'Y-m-\1\0 H:i:s' , time() ) );
     $date->modify ( '+1 months' );
     $date->setTime ( 00 , 00 , 00);
-    if ( ! wp_next_scheduled ( 'monthly_consolidate_refunds' ) ) {
-	    wp_schedule_event($date->getTimestamp ( ), 'wp_team_rubiks_monthly', 'monthly_consolidate_refunds' );
+    if ( ! wp_next_scheduled ( 'monthly_consolidate_refunds_report_to_google_drive' ) ) {
+	    wp_schedule_event($date->getTimestamp ( ), 'wp_team_rubiks_monthly', 'monthly_consolidate_refunds_report_to_google_drive' );
     }
   }
 

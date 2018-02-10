@@ -36,8 +36,8 @@ class Monthly_Consolidate_Orders extends Consolidate {
     $date = new \DateTime( date ( 'Y-m-\1\0 H:i:s' , time() ) );
     $date->modify ( '+1 months' );
     $date->setTime ( 00 , 00 , 00);
-    if ( ! wp_next_scheduled ( 'monthly_consolidate_orders' ) ) {
-	    wp_schedule_event($date->getTimestamp ( ), 'wp_team_rubiks_monthly', 'monthly_consolidate_orders' );
+    if ( ! wp_next_scheduled ( 'monthly_consolidate_orders_report_to_google_drive' ) ) {
+	    wp_schedule_event($date->getTimestamp ( ), 'wp_team_rubiks_monthly', 'monthly_consolidate_orders_report_to_google_drive' );
     }
   }
 

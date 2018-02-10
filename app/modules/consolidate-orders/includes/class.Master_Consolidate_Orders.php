@@ -22,8 +22,8 @@ class Master_Consolidate_Orders extends Consolidate {
     $date = new \DateTime( date ( 'Y-m-d H:i:s' , $next_five_minute ) );
     $date->modify ( '+5 minutes' );
     $date->setTime ( $date->format ( 'H' ), $date->format ( 'i' ) , 00);
-    if ( ! wp_next_scheduled ( 'master_consolidate_orders' ) ) {
-	    wp_schedule_event($date->getTimestamp ( ), 'wp_team_rubiks_five_minutes', 'master_consolidate_orders' );
+    if ( ! wp_next_scheduled ( 'master_consolidate_orders_report_to_google_drive' ) ) {
+	    wp_schedule_event($date->getTimestamp ( ), 'wp_team_rubiks_five_minutes', 'master_consolidate_orders_report_to_google_drive' );
     }
   }
 

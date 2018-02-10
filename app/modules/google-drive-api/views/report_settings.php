@@ -22,7 +22,7 @@ $orders = get_posts ( array (
 // echo count($orders);
 // echo '<br>';
 // echo array_sum ($total_items);
-//var_dump( _get_cron_array());
+var_dump( _get_cron_array());
 ?>
 
 <?PHP $fields = apply_filters ( 'get_wp_team_rubiks_woo_options' , false );?>

@@ -62,7 +62,7 @@ abstract class Consolidate extends Core\Reports {
         }
       }
     }
-    $option_key = current_action ( );
+    $option_key = str_replace ( array ( '_report_to_google_drive' , '_backdate' ) , '' , current_action ( ) );
     $report = get_option ( $option_key );
     if ( ! $report[ 'append' ] ) {
       $this->rows[] = $this->get_formatted_footer ( );

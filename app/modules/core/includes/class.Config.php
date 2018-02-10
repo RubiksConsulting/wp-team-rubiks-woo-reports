@@ -15,7 +15,7 @@ class Config extends Helpers {
   public static function uninstall ( ) {
     self::remove_report_directory ( );
     self::deregister_reports ( );
-    self::deregister_options ( );
+    //self::deregister_options ( );
   }
 
   /*======= Cron Methods =======*/
@@ -61,7 +61,9 @@ class Config extends Helpers {
       $options = self::$options + apply_filters ( 'get_wp_team_rubiks_woo_reports' , false );
     }
     foreach( $options as $key => $value ) {
-      update_option( $key, $value );
+      if ( ! get_option ( $key ) ) {
+        update_option( $key, $value );
+      }
     }
   }
 

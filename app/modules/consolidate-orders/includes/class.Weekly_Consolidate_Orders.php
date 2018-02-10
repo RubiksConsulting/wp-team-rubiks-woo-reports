@@ -27,8 +27,8 @@ class Weekly_Consolidate_Orders extends Consolidate {
   public function register_report ( ) {
     $date = new \DateTime( date ( 'Y-m-d H:i:s' , strtotime( 'next monday' ) ) );
     $date->setTime ( 00 , 00 , 00);
-    if ( ! wp_next_scheduled ( 'weekly_consolidate_orders' ) ) {
-	    wp_schedule_event($date->getTimestamp ( ), 'wp_team_rubiks_weekly', 'weekly_consolidate_orders' );
+    if ( ! wp_next_scheduled ( 'weekly_consolidate_orders_report_to_google_drive' ) ) {
+	    wp_schedule_event($date->getTimestamp ( ), 'wp_team_rubiks_weekly', 'weekly_consolidate_orders_report_to_google_drive' );
     }
   }
 
